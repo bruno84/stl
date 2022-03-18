@@ -3,7 +3,16 @@
 #include <vector> 
 
 using namespace std; 
-  
+ 
+/*
+Vectors são contêineres sequenciais que representam arrays que podem mudar de tamanho.
+Assim como os arrays, os vectors usam armazenamento contíguos na memória para seus elementos, 
+com a mesma eficiência dos arrays. 
+Mas, diferentemente dos arrays, seu tamanho pode mudar dinamicamente.
+Portanto, em comparação com os arrays, os vectors consomem mais memória 
+em troca da capacidade de gerenciar o armazenamento e crescer dinamicamente de forma eficiente.
+*/
+
 void show(int array[], int size) 
 { 
 	cout << endl; 
