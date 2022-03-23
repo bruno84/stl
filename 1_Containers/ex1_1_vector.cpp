@@ -140,6 +140,52 @@ int main()
 	cout << "size = " << vetor5.size();	 // 2
   	show(vetor5); 
   	
+  	cout << endl << "ADICIONAR (varias formas): " << endl;
+  	// Adicionar no fim:
+  	vetor5.push_back(100);
+  	
+	// Adicionar no fim:
+  	auto it = vetor5.end();
+  	vetor5.insert( it, 200 );
+  	
+  	// Adicionar no inicio:
+  	it = vetor5.begin();
+  	vetor5.insert( it, 11 );
+  	
+  	// Adicionar em qq posicao:
+  	int index = 3;
+  	it = vetor5.begin();
+  	vetor5.insert( it+index, 22 );
+  	  	
+  	cout << "size = " << vetor5.size();	 
+  	show(vetor5); 
+
+
+  	cout << endl << "REMOVER (varias formas): " << endl;  	
+  	// Remover no fim:
+  	it = vetor5.end()-1; // lembre-se que .end() eh "past-the-end"
+  	cout << "sera removido (no fim) = " << *it << endl;	 
+  	vetor5.pop_back();
+  	
+	// Remover no fim:
+	it = vetor5.end()-1; // lembre-se que .end() eh "past-the-end"
+  	cout << "sera removido (no fim) = " << *it << endl;	
+    vetor5.erase(it); 
+  	
+  	// Remover no inicio:
+	it = vetor5.begin(); 
+  	cout << "sera removido (no inicio) = " << *it << endl;	
+    vetor5.erase(it); 
+  	
+  	// Remover em qq posicao:
+  	index = 1;
+  	cout << "sera removido (index) = " << vetor5[index] << endl;
+  	it = vetor5.begin();
+  	vetor5.erase( it+index );
+  	
+  	cout << "size = " << vetor5.size();	 
+  	show(vetor5); 
+
 
     return 0; 
 } 
