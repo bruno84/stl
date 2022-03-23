@@ -114,7 +114,8 @@ int main()
 	cout << "RESIZE: " << endl;
 	// Altera o tamanho do vector
 	vetor5.resize( dist ); 					// 10 20 30 20 10
-	cout << "size = " << vetor5.size();		// 5
+	cout << "size = " 	  << vetor5.size() << endl;		// 5
+	cout << "capacity = " << vetor5.capacity();	 
 	show(vetor5);
 	
 	cout << "BEGIN e END: ";
@@ -125,7 +126,7 @@ int main()
 	cout << "ERASE (intervalo): " << endl;
 	// Remove um trecho do vector. Parametros: inicio, fim (past-the-end)
     vetor5.erase(vetor5.begin(), vetor5.end() - 3 );  // 0, (5-3=2)
-	cout << "size = " << vetor5.size();		// 3	
+	cout << "size = " << vetor5.size() << endl;		// 3	
     show(vetor5); 			// Removeu o inicio: 10, 20 	Resultou: 30 20 10
 	  
     cout << "FIND: " << endl; 
@@ -137,7 +138,8 @@ int main()
 	int indexToDelete = 1;			// quero apagar o 20
     vetor5.erase(vetor5.begin() + indexToDelete); 
 		
-	cout << "size = " << vetor5.size();	 // 2
+	cout << "size = " 	  << vetor5.size() << endl;		 // 2
+	cout << "capacity = " << vetor5.capacity();	 
   	show(vetor5); 
   	
   	cout << endl << "ADICIONAR (varias formas): " << endl;
@@ -150,14 +152,21 @@ int main()
   	
   	// Adicionar no inicio:
   	it = vetor5.begin();
-  	vetor5.insert( it, 11 );
+  	vetor5.insert( it, 6 );
+  	vetor5.insert( it, 7 );
+  	vetor5.insert( it, 8 );
+  	vetor5.insert( it, 9 );
   	
   	// Adicionar em qq posicao:
   	int index = 3;
   	it = vetor5.begin();
   	vetor5.insert( it+index, 22 );
   	  	
-  	cout << "size = " << vetor5.size();	 
+  	it = vetor5.end(); 			 // lembre-se que .end() eh "past-the-end"
+  	vetor5.insert( it-1, 150 );	 // Vai adicionar na penultima posicao
+  	  	
+  	cout << "size = " << vetor5.size() << endl;	
+	cout << "capacity = " << vetor5.capacity();		// Perceba que vai aumentar: size+100%
   	show(vetor5); 
 
 
@@ -183,9 +192,10 @@ int main()
   	it = vetor5.begin();
   	vetor5.erase( it+index );
   	
-  	cout << "size = " << vetor5.size();	 
+  	cout << "size = " 	  << vetor5.size() << endl;	 
+  	cout << "capacity = " << vetor5.capacity();	 
   	show(vetor5); 
 
-
+	system("pause");
     return 0; 
 } 
